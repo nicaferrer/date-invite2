@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quick Date With You 💕</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(180deg, #ff9a9e, #fad0c4);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.card {
+    width: 92%;
+    max-width: 380px;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+img {
+    width: 100%;
+    border-radius: 15px;
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 14px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.yes {
+    background: #ff4d6d;
+    color: #fff;
+}
+
+.yes:hover {
+    background: #ff2e55;
+}
+
+.ofcourse {
+    background: #fff;
+    color: #ff4d6d;
+}
+
+.hidden {
+    display: none;
+}
+
+.heart {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+    <div id="page1">
+        <img src="us.jpg" alt="Us Together">
+        <h1>Hey My Love ❤️</h1>
+        <p>
+            I was looking at this photo  
+            and thought…  
+            how about a quick date just for us?
+        </p>
+        <button class="yes" onclick="nextPage()">Tap here 💌</button>
+    </div>
+
+    <div id="page2" class="hidden">
+        <h1>Quick Date? 🥰</h1>
+        <p>
+            No rush. No stress.  
+            Just you, me, and time together.
+            <br><br>
+            📍 Anywhere you like  
+            <br>
+            🕒 Anytime you want
+        </p>
+        <button class="yes" onclick="nextPage()">One last question 💖</button>
+    </div>
+
+    <div id="page3" class="hidden">
+        <h1>Will You Go With Me? 💕</h1>
+        <p>
+            You’re my favorite person  
+            and I’d love to take you out.
+        </p>
+
+        <button class="yes" onclick="accepted()">Yes 💖</button>
+        <button class="ofcourse" onclick="accepted()">Of course 🥰</button>
+
+        <div id="final" class="hidden">
+            <p class="heart">❤️❤️❤️</p>
+            <p>
+                Yay! I can’t wait to see you.  
+                I love you always.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+let page = 1;
+
+function nextPage() {
+    document.getElementById("page" + page).classList.add("hidden");
+    page++;
+    document.getElementById("page" + page).classList.remove("hidden");
+}
+
+function accepted() {
+    document.getElementById("final").classList.remove("hidden");
+}
+</script>
+
+</body>
+</html>
